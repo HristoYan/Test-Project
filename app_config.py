@@ -1,7 +1,26 @@
 import os
 from dotenv import load_dotenv
+from pydentic import BaseModel, EmailStr
 
 load_dotenv()
+
+
+class AppConfig(BaseModel):
+    api_key: str = os.getenv('API_KEY')
+    user_name: str = os.getenv('USER_NAME')
+    user_pass: str = os.getenv('USER_PASS')
+
+
+app_config = AppConfig()
+
+
+class User(BaseModel):
+    name: str
+    age: int
+    email: EmailStr
+
+
+user = User(name='John', age=34, email='test')
 
 
 class UserInfo:

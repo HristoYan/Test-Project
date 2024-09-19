@@ -3,6 +3,7 @@ import os
 from loguru import logger
 import requests
 from app_config import UserInfo
+from app_config import app_config
 
 # logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
 # logger = logging.getLogger(__name__)
